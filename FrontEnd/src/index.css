@@ -35,4 +35,6 @@ body {
 .detail-header{
   margin-right: 10px;
   margin-left: 25px;
+  color: blue;
+  font-weight: 500;
 }

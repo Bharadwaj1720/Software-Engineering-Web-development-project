@@ -1,9 +1,10 @@
 import React from 'react'
 import Library from './User_Components/Library'
 import Main from './User_Components/Main'
-import Health_Center from './User_Components/Health_Center'
+import HealthCenter from './User_Components/HealthCenter'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import DoctorAppointment from './User_Components/DoctorAppointment'
+import GetPrescription from './User_Components/GetPrescription'
 
 function App() {
     return (
@@ -16,10 +17,13 @@ function App() {
               <Library/>
           </Route>
           <Route exact path="/health-center">
-              <Health_Center/>
+              <HealthCenter/>
           </Route>
           <Route exact path="/health-center/book-appointment">
               <DoctorAppointment/>
+          </Route>
+          <Route exact path="/health-center/get-prescription">
+              <GetPrescription/>
           </Route>
         </Switch>
       </Router>
