@@ -8,7 +8,6 @@ import Home from "./Home";
 import root from "./Login"
 import { Link } from "react-router-dom"
 import './Login.css';
-
 export default function Login() {
     return (
         <div className="body_login">

@@ -5,48 +5,12 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import './Home.css';
+import Layout from "./Layout";
 export default function Home() {
     return (
         <div className="body_Home">
-            <div className="header_Home">
-                <div className="left_sec_Home">
-                    <img className="hamburger_Home" src="https://cdn3.iconfinder.com/data/icons/mobile-friendly-ui/100/menu-512.png" />
-                    <img className="IIT_logo_Home" src="https://www.thehindubusinessline.com/news/education/rey8hd/article29086147.ece/ALTERNATES/LANDSCAPE_615/iit-tirupatiJPG" />
-                </div>
-                <div className="middle_sec_Home">
-                    <marquee width="100%" direction="right" height="100px">
-                        Welcome to IIT Tirupati ERP Portal
-                    </marquee>
-                </div>
-                <div className="right_sec_Home">
-                    <img className="myc_icon_Home" src="https://th.bing.com/th/id/R.c3631c652abe1185b1874da24af0b7c7?rik=XBP%2fc%2fsPy7r3HQ&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fpng-user-icon-circled-user-icon-2240.png&ehk=z4ciEVsNoCZtWiFvQQ0k4C3KTQ6wt%2biSysxPKZHGrCc%3d&risl=&pid=ImgRaw&r=0" />
-                    <div style={{ marginLeft: 3 }}>Guest Account</div>
-                </div>
-            </div>
-            <div className="sidebar_Home">
-                <div className="sidebar_link_Home">
-                    <img className="side_icon_Home" src="https://static.vecteezy.com/system/resources/previews/000/627/632/original/vector-home-icon-symbol-sign.jpg" />
-                    <div>Home</div>
-                </div>
-                <div className="sidebar_link_Home">
-                    <img className="side_icon_Home" src="https://th.bing.com/th/id/R.c3631c652abe1185b1874da24af0b7c7?rik=XBP%2fc%2fsPy7r3HQ&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fpng-user-icon-circled-user-icon-2240.png&ehk=z4ciEVsNoCZtWiFvQQ0k4C3KTQ6wt%2biSysxPKZHGrCc%3d&risl=&pid=ImgRaw&r=0" />
-                    <div>Profile</div>
-                </div>
-                <div className="sidebar_link_Home">
-                    <img className="side_icon_Home" src="https://th.bing.com/th/id/OIP.FhZwWr_ieJbTAXspxoMXaQHaHa?pid=ImgDet&rs=1" />
-                    <div>Contact</div>
-                </div>
-                <div className="sidebar_link_Home">
-                    <img className="side_icon_Home" src="https://cdn3.iconfinder.com/data/icons/communication/512/FAQs-512.png" />
-                    <div>Faqs</div>
-                </div>
-                <div className="sidebar_link_Home">
-                    <img className="side_icon_Home" src="https://static.vecteezy.com/system/resources/previews/000/440/213/original/question-mark-vector-icon.jpg" />
-                    <div>help</div>
-                </div>
-
-            </div>
-
+            <Layout />
+            <div className="Qselec">Quick Selection</div>
             <div className="container text-center">
                 <div className="row">
                     <div className="col">
