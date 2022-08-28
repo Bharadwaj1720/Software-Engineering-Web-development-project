@@ -52,19 +52,19 @@ function OffCanvasExample({ name, ...props }) {
                         <span className='sideH_Nav'>Library</span>
                         <ul>
                             <li><Link to='Fine Management'>Fine Management and Due clearance</Link></li>
-                            <li>Status of library account</li>
-                            <li>Book Acquisition Module</li>
-                            <li>Journal Acquisition Module</li>
-                            <li>Lost book Module</li>
+                            <li><Link to='Status of Library account'>Status of library account</Link></li>
+                            <li><Link to='Book Acquisition Module'>Book Acquisition Module</Link></li>
+                            <li><Link to='Journal Acquisition Module'>Journal Acquisition Module</Link></li>
+                            <li><Link to='Lost book Module'>Lost book Module</Link></li>
                         </ul>
                     </div>
                     <div >
 
                         <span className='sideH_Nav'>General Administration</span>
                         <ul>
-                            <li>Institute Vehicle Management for
-                                Guest</li>
-                            <li>Institute Guest house Management</li>
+                            <li><Link to='Vehicle Management'>Institute Vehicle Management for
+                                Guest</Link></li>
+                            <li><Link to='Guest house Management'>Institute Guest house Management</Link></li>
                         </ul>
                     </div>
                     <div>

@@ -9,7 +9,7 @@ import Layout from "./Layout";
 export default function Home() {
     return (
         <div className="body_Home">
-            <Layout />
+            <Layout message="Welcome to IIT Tirupati ERP Portal" />
             <div className="Qselec">Quick Selection</div>
             <div className="container text-center">
                 <div className="row">

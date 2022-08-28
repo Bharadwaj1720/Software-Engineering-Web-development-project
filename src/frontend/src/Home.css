@@ -187,3 +187,47 @@
     font-size: 20px;
     font-weight: bold;
 }
+
+.Book_Search {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+
+
+
+.search_book {
+    font-size: 15px;
+    flex: 1;
+    height: 34px;
+    padding-left: 10px;
+    font-size: 16px;
+    border: 1px;
+    border-style: solid;
+    border-color: rgb(192, 192, 192);
+    border-radius: 2px;
+    width: 500px;
+    box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.15);
+}
+
+.search_book::placeholder {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+
+}
+
+.search_button_book {
+    height: 40px;
+    width: 60px;
+    margin-left: 2px;
+    margin-right: 10px;
+    margin-bottom: 2px;
+    background-color: white;
+    border: none;
+
+}
+
+.search_icon_book {
+    height: 25px;
+    margin-top: 4px;
+}
