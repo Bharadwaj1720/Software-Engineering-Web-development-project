@@ -8,7 +8,8 @@ import GetPrescription from './User_Components/GetPrescription'
 
 function App() {
     return (
-      <Router>
+      <div>
+        <Router>
         <Switch>
           <Route exact path="/">
             <Main />
@@ -27,6 +28,8 @@ function App() {
           </Route>
         </Switch>
       </Router>
+      </div>
+      
     );
 }
 
