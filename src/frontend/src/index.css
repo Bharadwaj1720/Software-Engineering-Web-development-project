@@ -5,85 +5,294 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100%;
+  font-family: sans-serif;
+}
+
+.main-grid{
+  margin-right: 20px;
+  margin-left: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 18px;
+  row-gap: 40px;
+}
+
+.thumbnail_Home {
+  width: 300px;
+  display: block;
+
+
+}
+
+.thumbnail_Home:hover {
+  border-radius: 20%;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+
+}
+
+
+.Title_Home {
+  margin: 0px;
+  margin-bottom: 20px;
+  margin-top: -5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  text-align: center;
   width: 100%;
+  font-weight: bold;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.body_Home,
+.root {
+  background-color: rgb(250, 250, 250);
 }
 
-
-.header {
-  height: 100px;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: rgb(196, 196, 196);
-  background-color: rgb(57, 224, 224);
+.col {
+  width: 300px;
+  vertical-align: top;
+  margin-right: 15px;
 }
 
-.Logo {
-  height: 99px;
-}
-
-html,
-body {
-  height: 100%;
-  width: 100%;
-}
-
-.body_login {
-  height: 100%;
-  width: 100%
-}
-
-.main {
-  width: 100%;
-  min-height: 50px;
-  height: 100%;
+.image_Home {
+  margin-bottom: 10px;
   position: relative;
+  background-color: rgb(250, 250, 250);
 }
 
-.Heading {
-  position: absolute;
-  font-size: large;
+.body_Home,
+.root {
+  margin: 0px;
+  padding-top: 80px;
+  padding-left: 96px;
+  padding-right: 24px;
+  background-color: rgb(250, 250, 250);
+}
+
+.Lib_button_Home,
+.Heal_button_Home,
+.GA_button_Home,
+.Reas_button_Home {
+  border: 0;
+  background-color: rgb(250, 250, 250);
+}
+
+.header_Home {
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  background-color: white;
   top: 0;
   left: 0;
   right: 0;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(196, 196, 196);
+  z-index: 100;
 }
 
-.Campus {
-  width: 100%;
-  height: 100%;
-  -webkit-filter: blur(8px);
-  filter: blur(8px);
+.left_sec_Home {
+  display: flex;
+  align-items: center;
+
 }
 
-.Login {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 100px;
+.middle_sec_Home {
+  flex: 1;
+  margin-left: 2px;
+  margin-right: 2px;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 2px;
+  border-style: solid;
+
+  color: brown;
+  font-size: 25px;
+  align-items: left;
 }
 
-.user {
-  width: 40px;
-  border-radius: 20px;
+.right_sec_Home {
+  width: 200px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+
+  margin-right: 10px;
+  flex-shrink: 0;
 }
 
-.profile_pic {
+.IIT_logo_Home {
+  height: 50px;
+}
+
+
+.upload_icon_Home {
+  height: 24px;
+}
+
+.apps_icon_Home {
+  height: 24px;
+}
+
+.noti_icon_Home {
+  height: 24px;
+}
+
+.myc_icon_Home {
+  height: 32px;
+  border-radius: 16px;
+}
+
+.sidebar_Home {
+  position: fixed;
+  background-color: white;
+  top: 55px;
+  left: 0px;
+  bottom: 0px;
+  width: 72px;
+  z-index: 200;
+}
+
+.sidebar_link_Home {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(250, 250, 250);
+  justify-content: center;
+  align-items: center;
+  height: 76px;
+  cursor: pointer;
+  width: 72px;
+}
+
+.sidebar_link_Home:hover {
+  height: 78px;
+  width: 74px;
+  background-color: rgb(196, 196, 196);
+
+}
+
+.side_icon_Home {
+  height: 24px;
+  border-radius: 50%;
+}
+
+.side_icon_Home:hover {
+  background-color: rgb(196, 196, 196);
+
+}
+
+.sidebar_link_Home div {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.Qselec {
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sideH_Nav {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.box{
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.logo{
+  width: 110px;
+  padding: 0;
+}
+
+.main_header{
+  font-family: sans-serif;
+}
+
+
+.name-bar, .age-bar, .date-bar, .time-bar, .problem-bar{
+    margin-left: 0;
+    width: 80%;
+    height: 28px;
+    padding-left: 7px;
+    border-color: rgb(206, 206, 206);
+    border-style: solid;
+    border-radius: 2px;
+    border-width: 1px;
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.problem-bar{
+  width: 80%;
+  height: 90%;
+}
+
+.age-bar{
+  width: 82%;
+}
+
+.time-bar{
+  width: 60%;
+}
+
+.date-bar{
+  width: 60%;
+}
+
+.card :hover{
+  opacity: 0.8;
+}
+
+.detail-header{
   display: inline-block;
+  margin : 0;
+  width: 58px;
+  color: blue;
+  font-weight: 500;
 }
 
-.root {
-  width: 100%;
-  height: 100%;
-}
-
-.about {
-  vertical-align: top;
+.detail-header-name, .detail-header-age, .detail-header-time, .detail-header-problem{
   display: inline-block;
-  margin-left: 10px;
-  margin-top: 10px;
+  margin : 0;
+  width: 50px;
+  color: blue;
+  font-weight: 500;
+}
+
+.detail-header-problem{
+  width: 75px;
+}
+
+.detail-header-time{
+  width: 180px;
+}
+
+.detail-header-date{
+  display: block;
+  margin : 0;
+  width: 50px;
+  color: blue;
+  font-weight: 500;
+}
+
+.detail-header-age{
+  width: 37px;
+}
+
+.details{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
