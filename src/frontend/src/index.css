@@ -1,0 +1,263 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  width: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.header {
+  height: 100px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(196, 196, 196);
+  background-color: rgb(57, 224, 224);
+}
+
+.Logo {
+  height: 99px;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.body_login {
+  height: 100%;
+  width: 100%
+}
+
+.main {
+  width: 100%;
+  min-height: 50px;
+  height: 100%;
+  position: relative;
+}
+
+.Heading {
+  position: absolute;
+  font-size: large;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.Campus {
+  width: 100%;
+  height: 100%;
+  -webkit-filter: blur(8px);
+  filter: blur(8px);
+}
+
+.Login {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100px;
+}
+
+.user {
+  width: 40px;
+  border-radius: 20px;
+}
+
+.profile_pic {
+  display: inline-block;
+}
+
+.root {
+  width: 100%;
+  height: 100%;
+}
+
+.about {
+  vertical-align: top;
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+
+
+.box {
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.logo {
+  width: 110px;
+  padding: 0;
+}
+
+.main_header {
+  font-family: sans-serif;
+}
+
+
+.name-bar,
+.age-bar,
+.date-bar,
+.time-bar,
+.problem-bar,
+.symptoms-bar {
+  margin-left: 0;
+  height: 28px;
+  padding-left: 7px;
+  border-color: rgb(206, 206, 206);
+  border-style: solid;
+  border-radius: 2px;
+  border-width: 1px;
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.symptoms-bar {
+  width: 64%;
+}
+
+.problem-bar {
+  width: 80%;
+  height: 90%;
+}
+
+.age-bar {
+  width: 82%;
+}
+
+.time-bar {
+  width: 60%;
+}
+
+.date-bar {
+  width: 60%;
+}
+
+.card :hover {
+  opacity: 0.8;
+}
+
+.detail-header {
+  display: inline-block;
+  margin: 0;
+  width: 58px;
+  color: blue;
+  font-weight: 500;
+}
+
+.medical-grid {
+  display: grid;
+  grid-template-columns: 60fr 42fr;
+}
+
+.form-grid {
+  margin-left: 10px;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+}
+
+.vehicle-down-options {
+  padding-left: 24%;
+  padding-right: 24%;
+  margin-top: 50px;
+}
+
+.vehicle-grid {
+  padding-left: 25%;
+  padding-right: 25%;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+}
+
+.submit-appointment {
+  color: white;
+  background-color: rgb(69, 69, 196);
+  padding: 3px;
+  border: 0;
+  font-size: 14px;
+}
+
+.doc-timings-link {
+  text-decoration: none;
+  color: white;
+  font-weight: 450;
+  font-size: 14px;
+  margin-right: 12px;
+  background-color: rgb(69, 69, 196);
+  padding: 4px;
+  cursor: pointer;
+}
+
+.doc-timings-link:hover {
+  opacity: 0.8;
+  color: white;
+}
+
+.book-appointment {
+  background-color: rgb(170, 62, 62);
+  border: 0;
+  color: white;
+  padding: 3px;
+  font-size: 14px;
+}
+
+.book-appointment:hover {
+  opacity: 0.8;
+  color: white;
+}
+
+.submit-appointment:hover {
+  opacity: 0.8;
+}
+
+.detail-header-name,
+.detail-header-age,
+.detail-header-time,
+.detail-header-problem,
+.detail-header-symptoms,
+.detail-header-past {
+  display: inline-block;
+  margin: 0;
+  width: 50px;
+  color: blue;
+  font-weight: 500;
+}
+
+.detail-header-symptoms {
+  width: 120px;
+}
+
+.detail-header-problem {
+  width: 110px;
+}
+
+.detail-header-time {
+  width: 180px;
+}
+
+.detail-header-date {
+  display: block;
+  margin: 0;
+  width: 50px;
+  color: blue;
+  font-weight: 500;
+}
+
+.detail-header-age {
+  width: 37px;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
