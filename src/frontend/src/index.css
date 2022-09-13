@@ -14,6 +14,10 @@ code {
     monospace;
 }
 
+.navbar-items{
+  text-decoration: none;
+  color: rgb(67, 66, 66);
+}
 
 .header {
   height: 100px;

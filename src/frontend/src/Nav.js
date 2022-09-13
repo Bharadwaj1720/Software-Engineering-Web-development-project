@@ -40,39 +40,39 @@ function OffCanvasExample({ name, ...props }) {
 
                         <span className='sideH_Nav'>Health Center</span>
                         <ul>
-                            <li><Link to='health-center'>Medical Records and Appointment booking</Link></li>
-                            <li><Link to='doc-availability'>Doctor Availability Timings</Link></li>
+                            <li><Link className="navbar-items" to='health-center'>Medical Records and Appointment booking</Link></li>
+                            <li><Link Link className="navbar-items" to='doc-availability'>Doctor Availability Timings</Link></li>
                         </ul>
                     </div>
                     <div >
 
                         <span className='sideH_Nav'>Library</span>
                         <ul>
-                            <li><Link to='Book Checkout'>Book Checkout</Link></li>
-                            <li><Link to='Fine Management'>Fine Management and Due clearance</Link></li>
-                            <li><Link to='Status of Library account'>Status of library account</Link></li>
-                            <li><Link to='Book Acquisition Module'>Book Acquisition Module</Link></li>
-                            <li><Link to='Journal Acquisition Module'>Journal Acquisition Module</Link></li>
-                            <li><Link to='Lost book Module'>Lost book Module</Link></li>
+                            <li><Link Link className="navbar-items" to='Book Checkout'>Book Checkout</Link></li>
+                            <li><Link Link className="navbar-items" to='Fine Management'>Fine Management and Due clearance</Link></li>
+                            <li><Link Link className="navbar-items" to='Status of Library account'>Status of library account</Link></li>
+                            <li><Link Link className="navbar-items" to='Book Acquisition Module'>Book Acquisition Module</Link></li>
+                            <li><Link Link className="navbar-items" to='Journal Acquisition Module'>Journal Acquisition Module</Link></li>
+                            <li><Link Link className="navbar-items" to='Lost book Module'>Lost book Module</Link></li>
                         </ul>
                     </div>
                     <div >
 
                         <span className='sideH_Nav'>General Administration</span>
                         <ul>
-                            <li><Link to='vehicle-management'>Vehicle Management Records</Link></li>
-                            <li><Link to='vehicle-availability'>Available vehicles</Link></li>
-                            <li><Link to='book-vehicle'>Book Vehicle</Link></li>
+                            <li><Link Link className="navbar-items" to='vehicle-management'>Vehicle Management Records</Link></li>
+                            <li><Link Link className="navbar-items" to='vehicle-availability'>Available vehicles</Link></li>
+                            <li><Link Link className="navbar-items" to='book-vehicle'>Book Vehicle</Link></li>
                             {/* <li><Link to='Guest house Management'>Institute Guest house Management</Link></li> */}
                         </ul>
                     </div>
                     <div>
                         <span className='sideH_Nav'>Sponcered Research and Consultancy</span>
                         <ul >
-                            <li><Link to='Open Projects Notifications'>Open Projects Notifications</Link></li>
-                            <li><Link to='Accounts'>Processes from Accounts
+                            <li><Link Link className="navbar-items" to='Open Projects Notifications'>Open Projects Notifications</Link></li>
+                            <li><Link Link className="navbar-items" to='Accounts'>Processes from Accounts
                                 Module</Link></li>
-                            <li><Link to='Purchase'>Processes from Purchase
+                            <li><Link className="navbar-items" to='Purchase'>Processes from Purchase
                                 Module</Link></li>
                         </ul>
                     </div>

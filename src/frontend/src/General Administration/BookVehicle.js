@@ -5,9 +5,9 @@ export default function BookVehicle() {
   return (
     <div>
       <Layout message="Vehicle Booking" />
-      <div className="Book_Search">
+      
         <div style={{
-          marginTop: 5,
+          marginTop: 90,
           marginRight: 20
         }}>
           <h6 className="d-flex justify-content-center mb-4">Vehicle Booking</h6>
@@ -15,7 +15,8 @@ export default function BookVehicle() {
             <div className="vehicle-grid">
               <p>Vehicle :</p>
               <select class="form-select form-select-sm" style={{
-                height: 30
+                height: 30,
+                width: 437
               }}>
                 <option selected>Select</option>
                 <option value="1">Car1</option>
@@ -65,7 +66,6 @@ export default function BookVehicle() {
             </div>
           </div>
         </div>
-      </div>
     </div>
 
   );

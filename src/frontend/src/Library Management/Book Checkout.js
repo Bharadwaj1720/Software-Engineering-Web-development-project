@@ -59,7 +59,7 @@ function Display(props) {
                             <ListGroup.Item action href="#link1">
                                 <span>Book Name: {props.BookName}</span>
                                 <hr />
-                                <span>Book Author: {props.Authorname}</span>
+                                <span>Book Author: {props.AuthorName}</span>
                             </ListGroup.Item>
                         </ListGroup>
                     </Col>
