@@ -63,6 +63,10 @@ function OffCanvasExample({ name, ...props }) {
                             <li><Link Link className="navbar-items" to='vehicle-management'>Vehicle Management Records</Link></li>
                             <li><Link Link className="navbar-items" to='vehicle-availability'>Available vehicles</Link></li>
                             <li><Link Link className="navbar-items" to='book-vehicle'>Book Vehicle</Link></li>
+
+                            <li><Link Link className="navbar-items" to='AllotRoom'>Allot Rooms</Link></li>
+                            <li><Link Link className="navbar-items" to='AvailableRooms'>Available Rooms</Link></li>
+                            <li><Link Link className="navbar-items" to='GuestHouseManagements'>Guest House Management</Link></li>
                             {/* <li><Link to='Guest house Management'>Institute Guest house Management</Link></li> */}
                         </ul>
                     </div>

@@ -26,6 +26,10 @@ export default function Book_Acquisition() {
                         <Form.Control type="text" placeholder="Author Name" />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                        <Form.Label>Enter Book ISBN number</Form.Label>
+                        <Form.Control type="text" placeholder="Eg: 9876345312" />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                         <Form.Label>Publication</Form.Label>
                         <Form.Control type="text" placeholder="Publication Name" />
                     </Form.Group>

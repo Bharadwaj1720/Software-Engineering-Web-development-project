@@ -11,32 +11,23 @@ import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
 
 
+
 export default function Book_Checkout() {
     const [state, setState] = useState(<div></div>);
     const [Bname, setBname] = useState(null)
-    const [Aname, setAname] = useState(null)
 
     return (
         <div>
             <Layout message="Book Checkout Module" />
             <div className="Book_Search">
                 <Form>
-                    <Form.Group className="mb-3" controlId="formBasicEmail" style={{ display: 'inline-block' }}>
+                    <Form.Group className="mb-6" controlId="formBasicEmail" style={{ display: "inline-block" }}>
                         <Form.Label>Search Book by Name</Form.Label>
-                        <Form.Control type="text" placeholder="Enter book name" onChange={(val) => setBname(val.target.value)} />
-                    </Form.Group>
-
-                    <Form.Group className="mb-3" controlId="formBasicPassword" style={{ display: 'inline-block', marginLeft: 10 }}>
-                        <Form.Label>Search Book by Author</Form.Label>
-                        <Form.Control type="text" placeholder="Enter author name" onChange={(val) => setAname(val.target.value)} />
+                        <Form.Control type="text" placeholder="EG: Harry Porter" onChange={(val) => setBname(val.target.value)} />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     </Form.Group>
-                    <Button variant="primary" onClick={() => setState(<div>
-                        <Display BookName={Bname} AuthorName={Aname} />
-
-
-                    </div>)}>
+                    <Button variant="primary" onClick={set}>
                         Search
                     </Button>
                 </Form>
@@ -46,10 +37,30 @@ export default function Book_Checkout() {
             </div>
         </div>
     )
+
+
+    function set() {
+        if (Bname.toLowerCase() == "harry" || Bname.toLowerCase() == "harry potter") {
+            setState(<div>
+                <Display1 />
+            </div>);
+        }
+        else if (Bname.toLowerCase() == "the theory of everything") {
+            setState(<div>
+                <Display2 />
+            </div>);
+        }
+        else {
+            setState(<div style={{ marginTop: 20 }}>No book found</div>)
+        }
+
+    }
 }
 
 
-function Display(props) {
+
+
+function Display1() {
     return (
         <div style={{ marginTop: 30, width: 2000 }}>
             <Tab.Container id="list-group-tabs-example" >
@@ -57,15 +68,90 @@ function Display(props) {
                     <Col sm={4}>
                         <ListGroup>
                             <ListGroup.Item action href="#link1">
-                                <span>Book Name: {props.BookName}</span>
-                                <hr />
-                                <span>Book Author: {props.AuthorName}</span>
+                                <span>Book Name: Harry Porter and the Philosopher's Stone </span>
+                            </ListGroup.Item>
+
+                            <ListGroup.Item action href="#link1">
+                                <span>Book Author: JK Rowling</span>
+                            </ListGroup.Item>
+                        </ListGroup>
+
+                        <ListGroup style={{ marginTop: 20 }}>
+                            <ListGroup.Item action href="#link2">
+                                <span>Book Name: Harry Potter and the Chamber of Secrets  </span>
+                            </ListGroup.Item>
+
+                            <ListGroup.Item action href="#link2">
+                                <span>Book Author: JK Rowling</span>
+                            </ListGroup.Item>
+                        </ListGroup>
+
+
+                        <ListGroup style={{ marginTop: 20 }}>
+                            <ListGroup.Item action href="#link3">
+                                <span>Book Name: Harry Porter and the Deathly Hallows </span>
+                            </ListGroup.Item>
+
+                            <ListGroup.Item action href="#link3">
+                                <span>Book Author: JK Rowling</span>
                             </ListGroup.Item>
                         </ListGroup>
                     </Col>
                     <Col sm={8}>
                         <Tab.Content>
                             <Tab.Pane eventKey="#link1">
+
+                                <About />
+                            </Tab.Pane>
+
+                            <Tab.Pane eventKey="#link2">
+
+                                <About />
+                            </Tab.Pane>
+
+                            <Tab.Pane eventKey="#link3">
+
+                                <About />
+                            </Tab.Pane>
+
+                        </Tab.Content>
+                    </Col>
+                </Row>
+            </Tab.Container>
+        </div>
+    );
+
+}
+
+function Display2() {
+    return (
+        <div style={{ marginTop: 30, width: 2000 }}>
+            <Tab.Container id="list-group-tabs-example" >
+                <Row>
+                    <Col sm={4}>
+                        <ListGroup>
+                            <ListGroup.Item action href="#link1">
+                                <span>Book Name: The Theory of Everything </span>
+                            </ListGroup.Item>
+
+                            <ListGroup.Item action href="#link1">
+                                <span>Book Author: Stephen Hawking</span>
+                            </ListGroup.Item>
+                        </ListGroup>
+                    </Col>
+                    <Col sm={8}>
+                        <Tab.Content>
+                            <Tab.Pane eventKey="#link1">
+
+                                <About />
+                            </Tab.Pane>
+
+                            <Tab.Pane eventKey="#link2">
+
+                                <About />
+                            </Tab.Pane>
+
+                            <Tab.Pane eventKey="#link3">
 
                                 <About />
                             </Tab.Pane>

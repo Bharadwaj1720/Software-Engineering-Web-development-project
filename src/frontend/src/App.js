@@ -22,6 +22,9 @@ import DocAvailableTimings from './Health Center/DocAvailableTimings'
 import VehicleManagement from './General Administration/VehicleManagement'
 import AvailableVehicles from './General Administration/AvailableVehicles'
 import BookVehicle from './General Administration/BookVehicle'
+import GuestHouseManagement from './General Administration/GuestHouseManagement';
+import AllotRoom from './General Administration/AllotRoom';
+import AvailableRooms from './General Administration/AvailableRooms';
 
 function App() {
   return (
@@ -51,12 +54,6 @@ function App() {
         <Route exact path="/Status of Library account">
           <Status />
         </Route>
-        {/* <Route exact path="/Guest house Management">
-          <Guest_house />
-        </Route> */}
-        {/* <Route exact path="/Vehicle Management">
-          <Vehicle_Management />
-        </Route> */}
         <Route exact path="/Profile">
           <Profile />
         </Route>
@@ -69,21 +66,6 @@ function App() {
         <Route exact path="/help">
           <Help />
         </Route>
-        {/* <Route exact path="/Doctor Consultation">
-          <Doctor_Consultation />
-        </Route>
-        <Route exact path="/Employee Medical Record">
-          <Employee_Medical />
-        </Route>
-        <Route exact path="/Pharmacy Data">
-          <Pharmacy_Data />
-        </Route>
-        <Route exact path="/Referral letters to Hospitals">
-          <Referral_letters />
-        </Route>
-        <Route exact path="/Student Medical Record">
-          <Student_Medical />
-        </Route> */}
         <Route exact path="/Open Projects Notifications">
           <Open_Project />
         </Route>
@@ -110,6 +92,15 @@ function App() {
         </Route>
         <Route exact path="/book-vehicle">
           <BookVehicle />
+        </Route>
+        <Route exact path="/AllotRoom">
+          <AllotRoom />
+        </Route>
+        <Route exact path="/AvailableRooms">
+          <AvailableRooms />
+        </Route>
+        <Route exact path="/GuestHouseManagements">
+          <GuestHouseManagement />
         </Route>
       </Switch>
     </Router >
