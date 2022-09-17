@@ -1,5 +1,8 @@
 # Schemas
 
+(uid) is provided by MongoDB. It is not accessible to frontend.
+All collections are stored in the same database.
+
 ## Library:
 
 A book is defined as an abstract type while a book_obj is the concrete implementation. Each book is recognized by its unique ISBN. Each book_obj contains the book it describes.
@@ -27,4 +30,13 @@ ID_no          // will be roll_no for students, something else for others
 There are two collections: __books__ and __accounts__.
 All book_objs are found in __books__ and all accounts are found in __accounts__.
 Books are not stored anywhere, they are implicit.
+
+## Health Centre
+
+### schemas:
+
+
+## vehicle management
+
+### schemas:
 
