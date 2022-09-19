@@ -11,7 +11,7 @@ export default function Layout(props) {
             <div className="header_Home">
                 <div className="left_sec_Home">
                     <Nav />
-                    <img className="IIT_logo_Home" src="https://www.thehindubusinessline.com/news/education/rey8hd/article29086147.ece/ALTERNATES/LANDSCAPE_615/iit-tirupatiJPG" />
+                    <img className="IIT_logo_Home" src="https://miro.medium.com/max/1400/1*FVtCyRdJ6KOr4YswTtwMeA.jpeg" />
                 </div>
                 <div className="middle_sec_Home">
                     <marquee width="100%" direction="right" height="100px">
