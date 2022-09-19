@@ -5,10 +5,10 @@ const ObjectId = require("mongodb").ObjectId;
  
  
 // This section will help you get a list of all the records.
-recordRoutes.route("/library_accounts").get(function (req, res) {
+recordRoutes.route("/library_books").get(function (req, res) {
  let db_connect = dbo.getDb();
  db_connect
-   .collection("library_accounts")
+   .collection("library_journals")
    .find({})
    .toArray(function (err, result) {
      if (err) throw err;
@@ -17,40 +17,49 @@ recordRoutes.route("/library_accounts").get(function (req, res) {
 });
  
 // This section will help you get a single record by id
-recordRoutes.route("/library_accounts/:id").get(function (req, res) {
+recordRoutes.route("/library_books/:id").get(function (req, res) {
  let db_connect = dbo.getDb();
  let myquery = { _id: ObjectId(req.params.id) };
  db_connect
-   .collection("library_accounts")
+   .collection("library_journals")
    .findOne(myquery, function (err, result) {
      if (err) throw err;
      res.json(result);
    });
 });
 
-recordRoutes.route("/library_accounts/add").post(function (req, response) {
+recordRoutes.route("/library_books/add").post(function (req, response) {
     let db_connect = dbo.getDb();
-    let myobj = {
-      name: req.body.name,
-      ID: req.body.id,
-    }
-    db_connect.collection("library_accounts").insertOne(myobj, function (err, res) {
+    let book = {
+      title: req.body.title,
+      author: req.body.author,
+      ISBN: req.body.ISBN,
+    };
+    let myobj = {book:book,is_available:true,due_date:"",account:""}
+    db_connect.collection("library_journals").insertOne(myobj, function (err, res) {
       if (err) throw err;
       response.json(res);
     });
    });
 
-   recordRoutes.route("library_accounts/update/:id").post(function (req, response) {
+   recordRoutes.route("library_books/update/:id").post(function (req, response) {
     let db_connect = dbo.getDb();
     let myquery = { _id: ObjectId(req.params.id) };
+    let book = {
+      title: req.body.title,
+      author: req.body.author,
+      ISBN: req.body.ISBN,
+    };
     let newvalues = {
       $set: {
-        name: req.body.name,
-        ID: req.body.id,
+        book: book,
+        is_available: req.body.is_available,
+        due_date: req.body.due_date,
+        account: req.body.account
       },
     };
     db_connect
-      .collection("library_books")
+      .collection("library_journals")
       .updateOne(myquery, newvalues, function (err, res) {
         if (err) throw err;
         console.log("1 document updated");
@@ -58,10 +67,10 @@ recordRoutes.route("/library_accounts/add").post(function (req, response) {
       });
    });
   
-   recordRoutes.route("library_accounts/delete/:id").delete((req, response) => {
+   recordRoutes.route("library_books/delete/:id").delete((req, response) => {
     let db_connect = dbo.getDb();
     let myquery = { _id: ObjectId(req.params.id) };
-    db_connect.collection("library_accounts").deleteOne(myquery, function (err, obj) {
+    db_connect.collection("library_journals").deleteOne(myquery, function (err, obj) {
       if (err) throw err;
       console.log("1 document deleted");
       response.json(obj);
