@@ -1,26 +1,26 @@
 import React from "react";
 import Layout from "../Layout";
 import { Link } from 'react-router-dom';
-export default function BookVehicle() {
+export default function AllotRoom() {
   return (
     <div>
-      <Layout message="Vehicle Booking" />
-      
+      <Layout message="Alloting Rooms" />
+      <div>
         <div style={{
-          marginTop: 90,
+          marginTop: 100,
           marginRight: 20
         }}>
-          <h6 className="d-flex justify-content-center mb-4">Vehicle Booking</h6>
+          <h6 className="d-flex justify-content-center mb-4">Booking a Room</h6>
           <div className="container">
             <div className="vehicle-grid">
-              <p>Vehicle :</p>
+              <p>Room No. :</p>
               <select class="form-select form-select-sm" style={{
-                height: 30,
-                width: 437
+                height: 30
               }}>
                 <option selected>Select</option>
-                <option value="1">Car1</option>
-                <option value="2">Car2</option>
+                <option value="1">102</option>
+                <option value="2">202</option>
+                <option value="2">203</option>
               </select>
             </div>
             <div className="vehicle-grid">
@@ -28,21 +28,24 @@ export default function BookVehicle() {
               <input className="name-bar" type="text" placeholder=""></input>
             </div>
             <div className="vehicle-grid">
-              <p>Journey From :</p>
-              <input className="name-bar" type="text" placeholder="Start location"></input>
-            </div>
-            <div className="vehicle-grid">
-              <p>Journey To :</p>
-              <input className="name-bar" type="text" placeholder="Destination"></input>
-            </div>
-            <div className="vehicle-grid">
-              <p>Journey Date :</p>
+              <p>Checkin Date :</p>
               <input className="name-bar" type="text" placeholder=""></input>
             </div>
             <div className="vehicle-grid">
-              <p>Affiliation :</p>
+              <p>Checkout Date :</p>
               <input className="name-bar" type="text" placeholder=""></input>
             </div>
+            <div className="vehicle-grid">
+              <p>Room Type :</p>
+              <select class="form-select form-select-sm" style={{
+                height: 30
+              }}>
+                <option selected>Normal</option>
+                <option value="1">2 BHK</option>
+                <option value="2">3 BHK</option>
+              </select>
+            </div>
+
             <div className="vehicle-grid">
               <p>Estimates :</p>
               <input className="name-bar" type="text" placeholder="Enter the amount in ₹"></input>
@@ -53,7 +56,7 @@ export default function BookVehicle() {
               marginLeft: 15,
               marginRight: 15
             }}>
-              <Link className="book-appointment" to="vehicle-management" style={{
+              <Link className="book-appointment" to="GuestHouseManagements" style={{
                 paddingLeft: 10,
                 paddingRight: 10,
                 marginLeft: 5,
@@ -66,6 +69,7 @@ export default function BookVehicle() {
             </div>
           </div>
         </div>
+      </div>
     </div>
 
   );

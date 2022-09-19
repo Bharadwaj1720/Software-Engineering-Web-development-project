@@ -14,6 +14,10 @@ code {
     monospace;
 }
 
+.navbar-items{
+  text-decoration: none;
+  color: rgb(67, 66, 66);
+}
 
 .header {
   height: 100px;
@@ -86,4 +90,178 @@ body {
   display: inline-block;
   margin-left: 10px;
   margin-top: 10px;
+}
+
+
+
+.box {
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.logo {
+  width: 110px;
+  padding: 0;
+}
+
+.main_header {
+  font-family: sans-serif;
+}
+
+
+.name-bar,
+.age-bar,
+.date-bar,
+.time-bar,
+.problem-bar,
+.symptoms-bar {
+  margin-left: 0;
+  height: 28px;
+  padding-left: 7px;
+  border-color: rgb(206, 206, 206);
+  border-style: solid;
+  border-radius: 2px;
+  border-width: 1px;
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.symptoms-bar {
+  width: 64%;
+}
+
+.problem-bar {
+  width: 80%;
+  height: 90%;
+}
+
+.age-bar {
+  width: 82%;
+}
+
+.time-bar {
+  width: 60%;
+}
+
+.date-bar {
+  width: 60%;
+}
+
+.card :hover {
+  opacity: 0.8;
+}
+
+.detail-header {
+  display: inline-block;
+  margin: 0;
+  width: 58px;
+  color: blue;
+  font-weight: 500;
+}
+
+.medical-grid {
+  display: grid;
+  grid-template-columns: 60fr 42fr;
+}
+
+.form-grid {
+  margin-left: 10px;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+}
+
+.vehicle-down-options {
+  padding-left: 24%;
+  padding-right: 24%;
+  margin-top: 50px;
+}
+
+.vehicle-grid {
+  padding-left: 25%;
+  padding-right: 25%;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+}
+
+.submit-appointment {
+  color: white;
+  background-color: rgb(69, 69, 196);
+  padding: 3px;
+  border: 0;
+  font-size: 14px;
+}
+
+.doc-timings-link {
+  text-decoration: none;
+  color: white;
+  font-weight: 450;
+  font-size: 14px;
+  margin-right: 12px;
+  background-color: rgb(69, 69, 196);
+  padding: 4px;
+  cursor: pointer;
+}
+
+.doc-timings-link:hover {
+  opacity: 0.8;
+  color: white;
+}
+
+.book-appointment {
+  background-color: rgb(170, 62, 62);
+  border: 0;
+  color: white;
+  padding: 3px;
+  font-size: 14px;
+}
+
+.book-appointment:hover {
+  opacity: 0.8;
+  color: white;
+}
+
+.submit-appointment:hover {
+  opacity: 0.8;
+}
+
+.detail-header-name,
+.detail-header-age,
+.detail-header-time,
+.detail-header-problem,
+.detail-header-symptoms,
+.detail-header-past {
+  display: inline-block;
+  margin: 0;
+  width: 50px;
+  color: blue;
+  font-weight: 500;
+}
+
+.detail-header-symptoms {
+  width: 120px;
+}
+
+.detail-header-problem {
+  width: 110px;
+}
+
+.detail-header-time {
+  width: 180px;
+}
+
+.detail-header-date {
+  display: block;
+  margin: 0;
+  width: 50px;
+  color: blue;
+  font-weight: 500;
+}
+
+.detail-header-age {
+  width: 37px;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }

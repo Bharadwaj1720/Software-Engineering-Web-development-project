@@ -8,22 +8,23 @@ import Book_Acquisition from './Library Management/Book Acquisition Module'
 import Journal_Acquisition from './Library Management/Journal Acquisition Module'
 import Lost_Book from './Library Management/Lost book Module'
 import Status from './Library Management/Status of Library account'
-import Guest_house from './General Administration/Guest house Management'
-import Vehicle_Management from './General Administration/Vehicle Management';
 import Profile from './Profile';
 import Contact from './Contact';
 import FAQ from './Faq';
 import Help from './help';
-import Doctor_Consultation from './Health Center/Doctor Consultantion';
-import Employee_Medical from './Health Center/Employee Medical Record';
-import Pharmacy_Data from './Health Center/Pharmacy Data';
-import Referral_letters from './Health Center/Referral letters to Hospitals';
-import Student_Medical from './Health Center/Student Medical Record';
 import Open_Project from './Sponcered Research and Consultancy/Open Projects Notifications';
 import Processes_Accounts from './Sponcered Research and Consultancy/Processes from Accounts Module';
 import Processes_Purchase from './Sponcered Research and Consultancy/Processes from Purchase Module';
 import Book_Checkout from './Library Management/Book Checkout';
 import Change_pass from './Change_pass';
+import Health from './Health Center/Health';
+import DocAvailableTimings from './Health Center/DocAvailableTimings'
+import VehicleManagement from './General Administration/VehicleManagement'
+import AvailableVehicles from './General Administration/AvailableVehicles'
+import BookVehicle from './General Administration/BookVehicle'
+import GuestHouseManagement from './General Administration/GuestHouseManagement';
+import AllotRoom from './General Administration/AllotRoom';
+import AvailableRooms from './General Administration/AvailableRooms';
 
 function App() {
   return (
@@ -53,12 +54,6 @@ function App() {
         <Route exact path="/Status of Library account">
           <Status />
         </Route>
-        <Route exact path="/Guest house Management">
-          <Guest_house />
-        </Route>
-        <Route exact path="/Vehicle Management">
-          <Vehicle_Management />
-        </Route>
         <Route exact path="/Profile">
           <Profile />
         </Route>
@@ -71,21 +66,6 @@ function App() {
         <Route exact path="/help">
           <Help />
         </Route>
-        <Route exact path="/Doctor Consultation">
-          <Doctor_Consultation />
-        </Route>
-        <Route exact path="/Employee Medical Record">
-          <Employee_Medical />
-        </Route>
-        <Route exact path="/Pharmacy Data">
-          <Pharmacy_Data />
-        </Route>
-        <Route exact path="/Referral letters to Hospitals">
-          <Referral_letters />
-        </Route>
-        <Route exact path="/Student Medical Record">
-          <Student_Medical />
-        </Route>
         <Route exact path="/Open Projects Notifications">
           <Open_Project />
         </Route>
@@ -97,6 +77,30 @@ function App() {
         </Route>
         <Route exact path="/Change_pass">
           <Change_pass />
+        </Route>
+        <Route exact path="/health-center">
+          <Health />
+        </Route>
+        <Route exact path="/doc-availability">
+          <DocAvailableTimings />
+        </Route>
+        <Route exact path="/vehicle-management">
+          <VehicleManagement />
+        </Route>
+        <Route exact path="/vehicle-availability">
+          <AvailableVehicles />
+        </Route>
+        <Route exact path="/book-vehicle">
+          <BookVehicle />
+        </Route>
+        <Route exact path="/AllotRoom">
+          <AllotRoom />
+        </Route>
+        <Route exact path="/AvailableRooms">
+          <AvailableRooms />
+        </Route>
+        <Route exact path="/GuestHouseManagements">
+          <GuestHouseManagement />
         </Route>
       </Switch>
     </Router >

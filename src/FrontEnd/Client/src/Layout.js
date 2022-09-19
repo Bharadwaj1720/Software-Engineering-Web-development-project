@@ -24,31 +24,46 @@ export default function Layout(props) {
                 </div>
             </div>
             <div className="sidebar_Home">
-                <Link to="Home">
+                <Link to="Home" style={{
+                    textDecoration: 'none',
+                    color: "black"
+                }}>
                     <div className="sidebar_link_Home">
                         <img className="side_icon_Home" src="https://static.vecteezy.com/system/resources/previews/000/627/632/original/vector-home-icon-symbol-sign.jpg" />
                         <div>Home</div>
                     </div>
                 </Link>
-                <Link to="Profile">
+                <Link to="Profile" style={{
+                    textDecoration: 'none',
+                    color: "black"
+                }}>
                     <div className="sidebar_link_Home">
                         <img className="side_icon_Home" src="https://th.bing.com/th/id/R.c3631c652abe1185b1874da24af0b7c7?rik=XBP%2fc%2fsPy7r3HQ&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fpng-user-icon-circled-user-icon-2240.png&ehk=z4ciEVsNoCZtWiFvQQ0k4C3KTQ6wt%2biSysxPKZHGrCc%3d&risl=&pid=ImgRaw&r=0" />
                         <div>Profile</div>
                     </div>
                 </Link>
-                <Link to="Contact">
+                <Link to="Contact" style={{
+                    textDecoration: 'none',
+                    color: "black"
+                }}>
                     <div className="sidebar_link_Home">
                         <img className="side_icon_Home" src="https://th.bing.com/th/id/OIP.FhZwWr_ieJbTAXspxoMXaQHaHa?pid=ImgDet&rs=1" />
                         <div>Contact</div>
                     </div>
                 </Link>
-                <Link to="Faq">
+                <Link to="Faq" style={{
+                    textDecoration: 'none',
+                    color: "black"
+                }}>
                     <div className="sidebar_link_Home">
                         <img className="side_icon_Home" src="https://cdn3.iconfinder.com/data/icons/communication/512/FAQs-512.png" />
                         <div>Faqs</div>
                     </div>
                 </Link>
-                <Link to="help">
+                <Link to="help" style={{
+                    textDecoration: 'none',
+                    color: "black"
+                }}>
                     <div className="sidebar_link_Home">
                         <img className="side_icon_Home" src="https://static.vecteezy.com/system/resources/previews/000/440/213/original/question-mark-vector-icon.jpg" />
                         <div>help</div>

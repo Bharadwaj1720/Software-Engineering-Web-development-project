@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from './Header'
-
+import Layout from "../Layout";
 export default function DoctorAppointment() {
     return (
         <div>
@@ -11,14 +11,14 @@ export default function DoctorAppointment() {
                     alignItems: 'center'
                 }}>
                     <div className="detail-header-name">Name</div>
-                    <input className="name-bar" type="text" placeholder="Enter your Name"></input>     
+                    <input className="name-bar" type="text" placeholder="Enter your Name"></input>
                 </span>
                 <span className='border p-2' style={{
                     display: 'flex',
                     alignItems: 'center'
                 }}>
                     <div className="detail-header-age">Age</div>
-                    <input className="age-bar" type="text" placeholder="Enter your Age"></input>     
+                    <input className="age-bar" type="text" placeholder="Enter your Age"></input>
                 </span>
                 <span className='border p-2'>
                     <span className="detail-header" style={{
@@ -32,7 +32,7 @@ export default function DoctorAppointment() {
                         <option value="1">Male</option>
                         <option value="2">Female</option>
                         <option value="3">Other</option>
-                    </select>    
+                    </select>
                 </span>
                 <span className='border p-2' style={{
                     display: 'flex',
@@ -42,7 +42,7 @@ export default function DoctorAppointment() {
                         width: 140,
                         display: 'block'
                     }}>Appointment Date</div>
-                    <input className="date-bar" type="text" placeholder="Enter the date"></input>     
+                    <input className="date-bar" type="text" placeholder="Enter the date"></input>
                 </span>
                 <span className='border p-2'>
                     <span className="detail-header" style={{
@@ -55,14 +55,14 @@ export default function DoctorAppointment() {
                         <option selected>Select</option>
                         <option value="1">Doctor1</option>
                         <option value="2">Doctor2</option>
-                    </select>    
+                    </select>
                 </span>
                 <span className='border p-2' style={{
                     display: 'flex',
                     alignItems: 'center'
                 }}>
                     <div className="detail-header-time">Appointment Timings</div>
-                    <input className="time-bar" type="text" placeholder="Enter Appointment Time"></input>     
+                    <input className="time-bar" type="text" placeholder="Enter Appointment Time"></input>
                 </span>
             </div>
 
@@ -72,7 +72,7 @@ export default function DoctorAppointment() {
                 <div className="detail-header-problem">Cause of Visit</div>
                 <input className="problem-bar" type="text" placeholder="Descibe your problem/situation here" style={{
                     height: 80
-                }}></input>   
+                }}></input>
             </div>
 
             <div className="submit-appointment" style={{
@@ -80,10 +80,10 @@ export default function DoctorAppointment() {
                 display: 'flex',
                 justifyContent: 'center'
             }}>
-            <button className="btn btn-primary" style={{
-                borderRadius: 0,
-                backgroundColor: 'blueviolet'
-            }}>Submit</button>
+                <button className="btn btn-primary" style={{
+                    borderRadius: 0,
+                    backgroundColor: 'blueviolet'
+                }}>Submit</button>
             </div>
         </div>
 
