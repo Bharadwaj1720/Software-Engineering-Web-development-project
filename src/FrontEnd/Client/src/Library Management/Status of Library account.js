@@ -8,20 +8,24 @@ export default function Status() {
     return (
         <div>
             <Layout message="Library Status Module" />
-            <div className="Book_Search" >
-                <h2>List of Books Issued</h2>
-                <ListGroup variant="flush">
-                    <ListGroup.Item>Sipsers book</ListGroup.Item>
-                    <ListGroup.Item>Harry potter</ListGroup.Item>
-                    <ListGroup.Item>The theory of everything</ListGroup.Item>
-                    <ListGroup.Item>Dragon book</ListGroup.Item>
-                </ListGroup>
-                <hr />
-                <h2>List of Books with are overdue</h2>
-                <ListGroup variant="flush">
-                    <ListGroup.Item>CLRS</ListGroup.Item>
-                    <ListGroup.Item>Data structures in C++</ListGroup.Item>
-                </ListGroup>
+            <div className="Book_Search" style={{ width: 400 }}>
+                <Form>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Enter your full name</Form.Label>
+                        <Form.Control type="text" placeholder="Name" />
+                        <Form.Text className="text-muted">
+                            The name you enter should be same as the name you gave to institute
+                        </Form.Text>
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Institute Roll Number</Form.Label>
+                        <Form.Control type="text" placeholder="Roll number" />
+                    </Form.Group>
+                    <Button variant="primary" type="submit">
+                        Check status
+                    </Button>
+                </Form>
             </div>
         </div>
 
