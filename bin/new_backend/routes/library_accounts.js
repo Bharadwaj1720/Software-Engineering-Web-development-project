@@ -28,4 +28,44 @@ recordRoutes.route("/library_accounts/:id").get(function (req, res) {
    });
 });
 
+recordRoutes.route("/library_accounts/add").post(function (req, response) {
+    let db_connect = dbo.getDb();
+    let myobj = {
+      name: req.body.name,
+      ID: req.body.id,
+    }
+    db_connect.collection("library_accounts").insertOne(myobj, function (err, res) {
+      if (err) throw err;
+      response.json(res);
+    });
+   });
+
+   recordRoutes.route("library_accounts/update/:id").post(function (req, response) {
+    let db_connect = dbo.getDb();
+    let myquery = { _id: ObjectId(req.params.id) };
+    let newvalues = {
+      $set: {
+        name: req.body.name,
+        ID: req.body.id,
+      },
+    };
+    db_connect
+      .collection("library_books")
+      .updateOne(myquery, newvalues, function (err, res) {
+        if (err) throw err;
+        console.log("1 document updated");
+        response.json(res);
+      });
+   });
+  
+   recordRoutes.route("library_accounts/delete/:id").delete((req, response) => {
+    let db_connect = dbo.getDb();
+    let myquery = { _id: ObjectId(req.params.id) };
+    db_connect.collection("library_accounts").deleteOne(myquery, function (err, obj) {
+      if (err) throw err;
+      console.log("1 document deleted");
+      response.json(obj);
+    });
+   });
+
 module.exports = recordRoutes;
