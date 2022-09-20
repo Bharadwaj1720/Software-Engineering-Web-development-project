@@ -1,2 +1,25 @@
-
+admininistration:
 change structure of repo
+add pdfs and slides
+
+frontend:
+accounts 3 login types: student, faculty, admin - VB
+search books by name and author - VB
+drugs need to be implemented in frontend - PVV
+stop displaying mongodb id - VB
+display number of books, not each book individually - VB
+change UI - PVV
+
+backend:
+make account schema - MKJ
+learn mvc model - AS, UK, MKJ
+learn mongoose - MKJ
+book_requests - MKJ
+
+schema for accounts:  
+  name
+  ID
+  status_library
+  status_medical
+  status_vehicle
+  status_research
