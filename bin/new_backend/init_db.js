@@ -5,12 +5,14 @@ dbo.connectToServer(function (err) {
     // this is the callback. Everything mentioned here happens after the connection is made
     if (err) console.error(err);
     db = dbo.getDb();
-    clear("library_books");
-    load_library_books(10,2,4);
-    clear("library_accounts");
-    load_library_accounts(10);
-    clear("medical_drugs");
-    load_medical_drugs(10);
+    //clear("library_books");
+    //load_library_books(10,2,4);
+    //clear("library_accounts");
+    //load_library_accounts(10);
+    //clear("medical_drugs");
+    //load_medical_drugs(10);
+    clear("library_journals");
+    load_library_journals(10,2,4);
     // add actions here to autogenerate other things
     console.log("generation_complete")
 })

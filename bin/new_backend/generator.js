@@ -39,7 +39,20 @@ function random_book_name()
     else name = starts[random(0,starts.length)].concat(" ").concat(name);
     return name;
 }
-
+function random_ISO_drug()
+{
+    var ISO  ="";
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    for(var i=0;i<3;i++)
+    {
+        ISO+=letters[random(0,letters.length)];
+    }
+    for(var i=0;i<7;i++)
+    {
+        ISO+=""+random(0,10);
+    }
+    return ISO;
+}
 function random_ISBN_number()
 {
     var number = "";
@@ -70,7 +83,6 @@ function random_ISBN_number()
     number=number.concat(sum);
     return number;
 }
-
 module.exports = 
 {
     random,
@@ -78,5 +90,6 @@ module.exports =
     random_roll_number, 
     random_personal_name, 
     random_book_name, 
-    random_ISBN_number
+    random_ISBN_number,
+    random_ISO_drug
 };
