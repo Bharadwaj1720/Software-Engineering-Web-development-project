@@ -6,6 +6,7 @@ const ObjectId = require("mongodb").ObjectId;
  
 // This section will help you get a list of all the records.
 recordRoutes.route("/library_accounts").get(function (req, res) {
+ console.log("/library_accounts route connected to"); 
  let db_connect = dbo.getDb();
  db_connect
    .collection("library_accounts")
@@ -15,7 +16,7 @@ recordRoutes.route("/library_accounts").get(function (req, res) {
      res.json(result);
    });
 });
- 
+
 // This section will help you get a single record by id
 recordRoutes.route("/library_accounts/:id").get(function (req, res) {
  let db_connect = dbo.getDb();
