@@ -3,6 +3,37 @@
 (uid) is provided by MongoDB. It is not accessible to frontend.
 All collections are stored in the same database.
 
+## General accounts:
+
+A general account has a username, password and status. Passwords are not stored in plaintext and cannot be accessed by the client.
+status is a string with six possible values to denote which module gives superuser access to the account
+1) all
+2) none
+3) library
+4) health
+5) vehicle
+6) research
+
+password:  
+(uid)
+hash  
+salt  
+
+general_accounts:
+(uid)  
+username  
+password  
+status
+
+authentication_tokens:
+(uid)
+account_id  
+token
+
+token:
+hash
+salt
+
 ## Library:
 
 A book is defined as an abstract type while a book_obj is the concrete implementation. Each book is recognized by its unique ISBN. Each book_obj contains the book it describes.
