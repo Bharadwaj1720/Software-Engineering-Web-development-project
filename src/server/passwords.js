@@ -15,9 +15,14 @@ function check_equality(plaintext,hashval,salt)
 {
     return (hashval===hash(plaintext,salt));
 }
+function generate_auth_token()
+{
+    return crypto.randomBytes(Number(process.env.AUTH_BYTES)).toString(process.env.BASE);
+}
 
 module.exports = {
     get_hash_and_salt,
     check_equality,
-    hash
+    hash,
+    generate_auth_token
 }

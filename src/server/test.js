@@ -1,13 +1,11 @@
 const RandomFunctions = require("./generator")
 require("dotenv").config({ path: "./config.env" });
 const axios = require('axios');
-/*
 
-
-const url='http://localhost:5000/library_accounts/add'
+const url='http://localhost:5000/general_accounts/login'
 const data = {
-    "name":"Mathew",
-    "id":"Student"
+    username: "Deus-Imperator",
+    password_plaintext: "augustussolinvictus"
 };
 
 axios.post(url, data)
@@ -18,7 +16,9 @@ axios.post(url, data)
         console.error(err);
     });
 
-*/
+
+
+/*
 const password_module = require("./passwords")
 
 for(var i =0;i< 10;i++)
@@ -32,4 +32,4 @@ for(var i =0;i< 10;i++)
     //console.log(p.hash === password_module.hash(plaintext,p.salt));
     console.log(password_module.check_equality(plaintext,p.hash,p.salt));
 
-}
+}*/
