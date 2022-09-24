@@ -2,32 +2,39 @@ const express = require("express");
 const recordRoutes = express.Router();
 const dbo = require("../db/conn");
 const ObjectId = require("mongodb").ObjectId;
+const security = require("../security.js");
  
  
 // This section will help you get a list of all the records.
-recordRoutes.route("/library_books").get(function (req, res) {
-  console.log(req);
- let db_connect = dbo.getDb();
- db_connect
+recordRoutes.route("/library_books").post(function (req, res) {
+  console.log("request made to ./library_books")
+  function callback(is_valid,message) {
+    if(!is_valid){res.json("authentication failed:"+message);return;}
+    //
+    let db_connect = dbo.getDb();
+    db_connect
    .collection("library_books")
    .find({})
    .toArray(function (err, result) {
      if (err) throw err;
      res.json(result);
    });
+   //
+  }
+  security.check_authentication(req.body.auth_token,["all","none"],callback)
 });
  
 // This section will help you get a single record by id
 recordRoutes.route("/library_books/:id").get(function (req, res) {
- let db_connect = dbo.getDb();
- let myquery = { _id: ObjectId(req.params.id) };
- db_connect
-   .collection("library_books")
-   .findOne(myquery, function (err, result) {
-     if (err) throw err;
-     res.json(result);
-   });
-});
+  let db_connect = dbo.getDb();
+  let myquery = { _id: ObjectId(req.params.id) };
+  db_connect
+    .collection("library_books")
+    .findOne(myquery, function (err, result) {
+      if (err) throw err;
+      res.json(result);
+    });
+ });
 
 recordRoutes.route("/library_books/add").post(function (req, response) {
     let db_connect = dbo.getDb();
