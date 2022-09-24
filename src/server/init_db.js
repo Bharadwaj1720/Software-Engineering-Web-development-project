@@ -15,6 +15,7 @@ dbo.connectToServer(function (err) {
     load_library_journals(10,2,4);
     // add actions here to autogenerate other things
     console.log("generation_complete")
+    process.exit();
 })
 var db;
 
@@ -69,7 +70,7 @@ function load_library_journals(n,lower,upper) // n unique titles, randomly coose
         const no_of_books = RandomFunctions.random(lower,upper);
         for(let j=0;j<no_of_books;j++)
         {
-            const book_obj = {book:book,is_available:true,due_date:"",account:""}
+            const book_obj = {book:book,is_available:true,due_date:null,account:null}
             coll.insertOne(book_obj);
         }
     }

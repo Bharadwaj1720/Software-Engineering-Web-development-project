@@ -1,15 +1,64 @@
+const action = "logout_all";
+
+const username = "lorem_ipsum"
+const password_plaintext = "dolor_sit_amet"
+const status = "all"
+const device_id = "device33"
+const auth_token="85818f6ed4b03a4b5c4f85378df5de48d27971665f62dc11a6e7e09192d0ac9"
+
 const RandomFunctions = require("./generator")
 require("dotenv").config({ path: "./config.env" });
-const axios = require('axios');
+const dbo = require("./db/conn");
+const axios = require('axios').default;
+const Security = require("./security")
 
-const url='http://localhost:5000/general_accounts/login'
-const data = {
-    username: "Deus-Imperator",
-    password_plaintext: "augustussolinvictus"
+
+const url_login='http://localhost:5000/general_accounts/login'
+const url_logout='http://localhost:5000/general_accounts/logout'
+const url_create='http://localhost:5000/general_accounts/add'
+const url_request="http://localhost:5000/library_books"
+const data_create = {
+    username: username,
+    password_plaintext: password_plaintext,
+    status:status
 };
+const data_login = {
+    username: username,
+    password_plaintext: password_plaintext,
+    device_id: device_id
+};
+const data_logout = {
+    username: username,
+    device_id: device_id
+}
+const data_logout_all = {
+    username: username,
+    device_id:null
+}
+const data_request = {
+    auth_token:auth_token
+}
 
-axios.post(url, data)
-    .then((res) => {
+
+
+let url="", data="";
+let to_post=true;
+if(action === "create"){url=url_create;data=data_create;}
+else if(action === "login"){url=url_login;data=data_login;}
+else if(action === "logout"){url=url_logout;data=data_logout;}
+else if(action === "logout_all"){url=url_logout;data=data_logout_all;}
+else if(action === "request"){url=url_request;data=data_request;}
+else if(action === "reset")
+{
+    to_post=false
+    dbo.connectToServer(function(err){
+        if(err)throw err;
+        Security.force_logout();
+    })
+}
+if(!to_post)return;
+
+axios.post(url,data).then((res) => {
         console.log(`Status: ${res.status}`);
         console.log('Body: ', res.data);
     }).catch((err) => {
@@ -18,7 +67,11 @@ axios.post(url, data)
 
 
 
-/*
+
+
+
+
+/* testing for salt-hash system
 const password_module = require("./passwords")
 
 for(var i =0;i< 10;i++)
