@@ -1,0 +1,50 @@
+0) general
+
+statuses: none, all, medical, library, gen_ad, research, root
+
+at all times, exacty one root must exist
+
+account_structure:
+0) username (can never be changed)
+1) name (can be changed only by root)
+2) password (hash,salt) (can be chanegd by respective user by providing old password, or by root)
+3) status (only root can change)
+
+root account id is hardcoded
+root cannot change account_id
+
+initializing root has to be done from server
+
+
+1) library
+
+list of books:
+none: book, is_available, due_date
+library: everything
+
+checkout books:
+none cannot do it
+librarian can do it
+
+add books:
+librarian can do it
+
+delete book:
+librarian can do it
+
+request:
+anyone can add a request
+
+list_of_books_boorowed by me:
+none can see all
+
+2) gen_ad
+
+
+
+
+3) health
+
+
+4) research
+
