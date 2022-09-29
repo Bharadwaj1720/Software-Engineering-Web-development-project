@@ -1,5 +1,5 @@
 const { MongoClient } = require("mongodb");
-const Db = process.env.IS_LOCAL==="true"?process.env.LOCAL:process.env.ATLAS_PREFIX+process.env.ATLAS_PASSWORD+process.env.ATLAS_SUFFIX;
+const Db = process.env.IS_LOCAL === "true" ? process.env.LOCAL : process.env.ATLAS;
 console.log("address is: "+Db)
   const client = new MongoClient(Db, {
   useNewUrlParser: true,
