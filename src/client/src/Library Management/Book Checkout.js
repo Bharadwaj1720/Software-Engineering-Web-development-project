@@ -48,9 +48,10 @@ export default function Book_Checkout() {
     function recordList() {
         var flag = 0;
         var i = 0;
+
         return records.map((record) => {
             i = i + 1;
-            if (record.book.title.toLowerCase() === Bname.toLowerCase()) {
+            if (record.book.title.toLowerCase().match(Bname.toLowerCase()) != null) {
                 flag = 1;
                 return (
                     <div>
