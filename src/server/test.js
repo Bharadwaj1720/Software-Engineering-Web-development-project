@@ -1,10 +1,18 @@
-const action = "logout_all";
+const action = process.argv[2];
+/*
+create
+login
+logout
+logout_all
+request
+purge
+*/
 
-const username = "lorem_ipsum"
+const username = "dummy"
 const password_plaintext = "dolor_sit_amet"
 const status = "all"
-const device_id = "device33"
-const auth_token="85818f6ed4b03a4b5c4f85378df5de48d27971665f62dc11a6e7e09192d0ac9"
+const device_id = "device42"
+const auth_token="972b13342e8c51b6751936c3a84cd7e24572694113f33ad1b897f4fc56c4f21"
 
 const RandomFunctions = require("./generator")
 require("dotenv").config({ path: "./config.env" });
@@ -17,6 +25,10 @@ const url_login='http://localhost:5000/general_accounts/login'
 const url_logout='http://localhost:5000/general_accounts/logout'
 const url_create='http://localhost:5000/general_accounts/add'
 const url_request="http://localhost:5000/library_books"
+const url_delete="http://localhost:5000/general_accounts/delete"
+const data_delete = {
+    username: username
+}
 const data_create = {
     username: username,
     password_plaintext: password_plaintext,
@@ -48,7 +60,8 @@ else if(action === "login"){url=url_login;data=data_login;}
 else if(action === "logout"){url=url_logout;data=data_logout;}
 else if(action === "logout_all"){url=url_logout;data=data_logout_all;}
 else if(action === "request"){url=url_request;data=data_request;}
-else if(action === "reset")
+else if(action === "delete"){url=url_delete;data=data_delete;}
+else if(action === "purge")
 {
     to_post=false
     dbo.connectToServer(function(err){

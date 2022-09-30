@@ -24,6 +24,7 @@ function generate_auth_token()
 
 function check_authentication(auth_token,statuses,callback)
 {
+    if(process.env.AUTHENTICATION_ENABLED==="false"){callback(true);return;}
     let db_connect = dbo.getDb();
     const result = db_connect.collection("authentication_tokens").find({})
     .toArray(function(err,result){

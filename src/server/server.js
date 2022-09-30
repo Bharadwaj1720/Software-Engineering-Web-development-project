@@ -13,7 +13,6 @@ function logger(req, res, next)
 }
 app.use(logger);
 
-app.use(require("./routes/library_accounts"));
 app.use(require("./routes/library_books"));
 app.use(require("./routes/library_journals"));
 app.use(require("./routes/general_accounts"));

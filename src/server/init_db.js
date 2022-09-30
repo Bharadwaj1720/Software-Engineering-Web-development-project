@@ -1,21 +1,21 @@
 const RandomFunctions = require("./generator")
 require("dotenv").config({ path: "./config.env" });
+const security = require("./security.js");
 const dbo = require("./db/conn");
 dbo.connectToServer(function (err) {
     // this is the callback. Everything mentioned here happens after the connection is made
     if (err) console.error(err);
     db = dbo.getDb();
-    //clear("library_books");
-    //load_library_books(10,2,4);
-    //clear("library_accounts");
-    //load_library_accounts(10);
-    //clear("medical_drugs");
-    //load_medical_drugs(10);
+    clear("library_books");
+    load_library_books(10,2,4);
+    clear("medical_drugs");
+    load_medical_drugs(10);
     clear("library_journals");
     load_library_journals(10,2,4);
+    clear("general_accounts");
+    load_root_account(process.env.ROOT_USERNAME,process.env.ROOT_PASSWORD);
     // add actions here to autogenerate other things
-    console.log("generation_complete")
-    process.exit();
+    console.log("generation complete")
 })
 var db;
 
@@ -92,4 +92,15 @@ function load_medical_drugs(n,lower,upper)
         }
         coll.insertOne(drug);
     }
+}
+
+function load_root_account(name, password_plaintext)
+{
+    console.log("root user has been created");
+    const coll = db.collection('general_accounts');
+    coll.insertOne({
+        username: name,
+        status: "root",
+        password: security.get_hash_and_salt(password_plaintext)
+    });
 }
