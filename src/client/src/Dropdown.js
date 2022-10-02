@@ -12,6 +12,7 @@ export default function Dropdown_button() {
                 <Dropdown.Item href="#/action-1"><Link to="Change_pass">Change Password</Link></Dropdown.Item>
                 <Dropdown.Item href="#/action-2"><Link to="Profile">Profile</Link></Dropdown.Item>
                 <Dropdown.Item href="#/action-3"><Link to="">Logout</Link></Dropdown.Item>
+                <Dropdown.Item href="#/action-4"><Link to="">Logout all</Link></Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
     );

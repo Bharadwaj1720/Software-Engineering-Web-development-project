@@ -14,7 +14,7 @@ code {
     monospace;
 }
 
-.navbar-items{
+.navbar-items {
   text-decoration: none;
   color: rgb(67, 66, 66);
 }
@@ -83,6 +83,7 @@ body {
 .root {
   width: 100%;
   height: 100%;
+  padding: 0;
 }
 
 .about {

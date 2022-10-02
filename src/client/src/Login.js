@@ -1,14 +1,57 @@
 import React from "react";
-import { ReactDOM } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Home from "./Home";
-import root from "./Login"
 import { Link } from "react-router-dom"
 import './Login.css';
+import { useState } from 'react';
+import { useNavigate } from "react-router";
+import { useHistory } from "react-router-dom";
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 export default function Login() {
+    const [form, setForm] = useState({
+        username: "",
+        password_plaintext: "",
+        device_id: ""
+    });
+    const navigate = useNavigate;
+
+    function updateForm(value) {
+        return setForm((prev) => {
+            return { ...prev, ...value };
+        });
+    }
+
+    // This function will handle the submission.
+    async function onSubmit(e) {
+        e.preventDefault();
+
+        // When a post request is sent to the create url, we'll add a new record to the database.
+        const newAccount = { ...form };
+
+        const response = await fetch("http://localhost:5000/general_accounts/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newAccount),
+        })
+            .catch(error => {
+                window.alert(error);
+                return;
+            });
+        const answer = await response.json();
+        setForm({ username: "", password_plaintext: "", device_id: "" });
+        if (answer.auth_token != null) {
+            navigate("/Home");
+        }
+        else {
+            navigate("/");
+        }
+    }
+
     return (
         <div className="body_login">
             <div className="header">
@@ -56,16 +99,18 @@ export default function Login() {
                                 <div className="about">
                                     Account Login
                                 </div>
-                                <div>
-                                    <input type="text" placeholder="Username" style={{ marginTop: 10 }} />
-                                </div>
-                                <div>
-                                    <input type="password" placeholder="Password" style={{ marginTop: 10 }} />
-                                </div>
-                                <button className="login_but" style={{
-                                    marginTop: 10,
-                                    backgroundColor: 'antiquewhite'
-                                }}><Link className="link" to="Home">Login</Link></button>
+                                <Form onSubmit={onSubmit}>
+                                    <div>
+                                        <input type="text" placeholder="Username" style={{ marginTop: 10 }} value={form.username} onChange={(e) => updateForm({ username: e.target.value })} />
+                                    </div>
+                                    <div>
+                                        <input type="password" placeholder="Password" style={{ marginTop: 10 }} value={form.password_plaintext} onChange={(e) => updateForm({ password_plaintext: e.target.value, device_id: e.target.value })} />
+                                    </div>
+                                    <Button variant="primary" value="Create person" type="submit" className="login_but" style={{
+                                        marginTop: 10,
+                                        backgroundColor: 'blue'
+                                    }}>Login</Button>
+                                </Form>
                             </div>
                         </div>
                         <div className="col-md-4">
