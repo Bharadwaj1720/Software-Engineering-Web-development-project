@@ -7,9 +7,11 @@ import { Link } from "react-router-dom"
 import './Login.css';
 import { useState } from 'react';
 import { useNavigate } from "react-router";
-import { useHistory } from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+
+export const deviceID = Math.random();
+
 export default function Login() {
     const [form, setForm] = useState({
         username: "",
@@ -45,10 +47,10 @@ export default function Login() {
         const answer = await response.json();
         setForm({ username: "", password_plaintext: "", device_id: "" });
         if (answer.auth_token != null) {
-            navigate("/Home");
+            window.location.href = "/Home";
         }
         else {
-            navigate("/");
+            window.location.href = "/";
         }
     }
 
@@ -104,12 +106,13 @@ export default function Login() {
                                         <input type="text" placeholder="Username" style={{ marginTop: 10 }} value={form.username} onChange={(e) => updateForm({ username: e.target.value })} />
                                     </div>
                                     <div>
-                                        <input type="password" placeholder="Password" style={{ marginTop: 10 }} value={form.password_plaintext} onChange={(e) => updateForm({ password_plaintext: e.target.value, device_id: e.target.value })} />
+                                        <input type="password" placeholder="Password" style={{ marginTop: 10 }} value={form.password_plaintext} onChange={(e) => updateForm({ password_plaintext: e.target.value, device_id: deviceID })} />
                                     </div>
                                     <Button variant="primary" value="Create person" type="submit" className="login_but" style={{
                                         marginTop: 10,
                                         backgroundColor: 'blue'
                                     }}>Login</Button>
+
                                 </Form>
                             </div>
                         </div>
