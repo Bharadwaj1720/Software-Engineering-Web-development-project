@@ -39,6 +39,27 @@ function random_book_name()
     else name = starts[random(0,starts.length)].concat(" ").concat(name);
     return name;
 }
+function random_course_id(){
+    const branches = ["CS","ME","EE","CH","CE","MA","PH","CY","HS"]
+    const ID = random(100,1000)
+    return branches[random(0,9)].concat(ID);
+}
+function random_project()
+{
+    const starts = ["Transfer Learning of ","Classification of ","Principles of ","Accelerating Computation to ","Interoperability of ","Analysis of ","Extending ","Deep federated learning of "]
+    const endings = [" using ML algorithms", " using ML models"," using Deep Neural Networks"," using Graph algorithms"," and its fabrications"," using Real-Time Embedded systems"]
+    var name = random_name(random(9,12));
+    name = starts[random(0,starts.length)].concat(name).concat(endings[random(0,endings.length)]);
+    return name;
+}
+function random_projectarr(){
+    let arr = [];
+    let len = random(1,5);
+    for(let i = 0;i<len;i++){
+        arr.push(random_course_id());   
+    }
+    return arr;
+}
 function random_ISO_drug()
 {
     var ISO  ="";
