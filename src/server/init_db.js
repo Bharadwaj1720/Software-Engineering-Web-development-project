@@ -6,6 +6,8 @@ dbo.connectToServer(function (err) {
     // this is the callback. Everything mentioned here happens after the connection is made
     if (err) console.error(err);
     db = dbo.getDb();
+    clear("open_projects");
+    load_research(10);
     clear("library_books");
     load_library_books(10,2,4);
     clear("medical_drugs");
@@ -54,6 +56,24 @@ function load_library_books(n,lower,upper) // n unique titles, randomly coose lo
             const book_obj = {book:book,is_available:true,due_date:"",account:""}
             coll.insertOne(book_obj);
         }
+    }
+}
+function load_research(n) // n different accounts
+{
+    console.log("collection open projects has been filled with randomly generated records")
+    const coll = db.collection("open_projects");
+    for(let i=0;i<n;i++)
+    {
+        const project = {
+            project_name:RandomFunctions.random_project(),
+            project_description:"lorem ipsum",
+            discipline:RandomFunctions.random_projectarr(),
+            closed:false,
+            project_duration:RandomFunctions.random(2,6),
+            max_number:RandomFunctions.random(4,11),
+            members:[]
+        }
+        coll.insertOne(project);
     }
 }
 
