@@ -29,16 +29,6 @@ function random_roll_number()
     var num = "".concat(random(0,10)).concat(random(0,10)).concat(random(0,10))
     return branches[random(0,9)].concat(years[random(0,5)]).concat(study[random(0,3)]).concat(num)
 }
-
-function random_book_name()
-{
-    const starts = ["Beginners guide to","The Art of","Modern theory of","Principles of","Introduction to","Design and Analysis of"]
-    const endings = ["- a Complete Guide", "for Dummies","- a Comprehensive Approach","- a Modern Approach"," Simplified"]
-    var name = random_name(random(4,12));
-    if(random(0,10)%2==0)name = name.concat(" ").concat(endings[random(0,endings.length)]);
-    else name = starts[random(0,starts.length)].concat(" ").concat(name);
-    return name;
-}
 function random_course_id(){
     const branches = ["CS","ME","EE","CH","CE","MA","PH","CY","HS"]
     const ID = random(100,1000)
@@ -52,6 +42,16 @@ function random_project()
     name = starts[random(0,starts.length)].concat(name).concat(endings[random(0,endings.length)]);
     return name;
 }
+function random_duration(){
+    let x = random(0,2);
+    let dur = "";
+    if(x==0){
+        return dur.concat(random(2,11)).concat(" (months)");
+    }
+    else{
+        return dur.concat(random(1,3)).concat(" (yrs)")
+    }
+}
 function random_projectarr(){
     let arr = [];
     let len = random(1,5);
@@ -59,6 +59,15 @@ function random_projectarr(){
         arr.push(random_course_id());   
     }
     return arr;
+}
+function random_book_name()
+{
+    const starts = ["Beginners guide to","The Art of","Modern theory of","Principles of","Introduction to","Design and Analysis of"]
+    const endings = ["- a Complete Guide", "for Dummies","- a Comprehensive Approach","- a Modern Approach"," Simplified"]
+    var name = random_name(random(4,12));
+    if(random(0,10)%2==0)name = name.concat(" ").concat(endings[random(0,endings.length)]);
+    else name = starts[random(0,starts.length)].concat(" ").concat(name);
+    return name;
 }
 function random_ISO_drug()
 {
@@ -111,6 +120,10 @@ module.exports =
     random_roll_number, 
     random_personal_name, 
     random_book_name, 
+    random_course_id,
+    random_project,
     random_ISBN_number,
-    random_ISO_drug
+    random_ISO_drug,
+    random_projectarr,
+    random_duration
 };
