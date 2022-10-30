@@ -5,7 +5,7 @@
 README	
 
 This project contains the client-side and server-side code for an ERP system with four modules:
-1)library\n
+1)library\
 2)health
 3)general administration
 4)research
