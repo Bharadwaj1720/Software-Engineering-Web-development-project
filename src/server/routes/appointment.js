@@ -1,19 +1,17 @@
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoose = require('mongoose');
 //const uri = "mongodb+srv://Bootstrapparadox:Team09@cluster0.pinftg3.mongodb.net/exampledb";
-mongoose.connect("mongodb+srv://<username>:<password>@cluster0.pinftg3.mongodb.net/bin_db",{ useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+mongoose.connect("mongodb+srv://Bootstrapparadox:ASMKJPVVUKVB@cluster0.pinftg3.mongodb.net/bin_db",{ useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 const express = require("express");
 const bodyParser = require("body-parser");
-const cors = require("cors");
 
 
 
-const app = express();
-
+//const app = express.Router();
+const app=express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"))
-app.use(cors());
 
 const appointmentschema = new mongoose.Schema({
     ID:{
@@ -30,6 +28,12 @@ const appointmentschema = new mongoose.Schema({
         type:String,
     },
     cause:{
+        type:String,
+    },
+    status:{
+        type:String,
+    },
+    previousMedicalhistory:{
         type:String,
     }
 })
@@ -70,13 +74,13 @@ function doctor(date,time1)
 }
 
 app.post('/new',function(req,res){
-    console.log("Attempt to access new");
     const appointment1=new Appointment({
         ID:random(6),
         date:req.body.date,
         time:req.body.time,
         cause:req.body.cause,
         doctor:req.body.doctor,
+        previousMedicalhistory:req.body.previousMedicalhistory,
 
     })
     appointment1.save(function(err)
@@ -94,7 +98,7 @@ app.delete("/deleteID",function(req, res){
         else res.send("Your appointment is succesfully cancelled")})
 })
 
-app.get('/appointments',function(req,res){
+app.get('/appointments/active',function(req,res){
     Appointment.find(function(err,appointments)
     {
         var array=[]
@@ -103,10 +107,39 @@ app.get('/appointments',function(req,res){
         {
             appointments.forEach(function(appointment)
             {
+                var today = new Date();
+                var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+                var time = today.getHours() + ":" + today.getMinutes();
+                if(appointment.date>date&&appointment.time>time)
                 array.push(appointment);
             })
-            res.json({name:array});
-            //res.send({array});
+            //res.json(array);
+            res.send(array);
+        }
+    })
+})
+
+app.get('/appointments/inactive',function(req,res){
+    Appointment.find(function(err,appointments)
+    {
+        var array=[]
+        let l=0
+        if(err)console.log(err);
+        else 
+        {
+            appointments.forEach(function(appointment)
+            {
+                var today = new Date();
+                var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+                var time = today.getHours() + ":" + today.getMinutes();
+                if(appointment.date>date&&appointment.time>time)
+                l=0
+                else
+                l=1
+                if(l==1)array.push(appointment);
+            })
+            //res.json(array);
+            res.send(array);
         }
     })
 })
@@ -156,4 +189,9 @@ app.post('/update',function(req,res)
         
     })
 })
-    app.listen(5000, function(){console.log("Server started on port 5000.");} )
+app.listen(5000,function(res,req)
+{
+    console.log("Server running successfully");
+});
+
+//module.exports = app;
