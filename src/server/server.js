@@ -17,6 +17,7 @@ app.use(require("./routes/library_books"));
 app.use(require("./routes/library_journals"));
 app.use(require("./routes/general_accounts"));
 app.use(require("./routes/test_route"));
+app.use(require("./routes/open_projects"));
 // do not make a route for authentication_tokens. this will compromise security
 //app.use(require("./routes/medical_drugs"));
 // get driver connection
