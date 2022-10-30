@@ -25,7 +25,7 @@ Now, the user can run the backend-server using the following commands:\
 `node server`\
 Finally the user may start the website by running the following commands:\
 `cd client`\
-`npm start`\
+`npm start`
 
 
 ## Instructions to run:
