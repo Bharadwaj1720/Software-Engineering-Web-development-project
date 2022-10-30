@@ -8,11 +8,11 @@ request
 purge
 */
 
-const username = "dummy"
+const username = "Bharadwaj"
 const password_plaintext = "dolor_sit_amet"
-const status = "all"
+const status = "research"
 const device_id = "device42"
-const auth_token="972b13342e8c51b6751936c3a84cd7e24572694113f33ad1b897f4fc56c4f21"
+const auth_token = "972b13342e8c51b6751936c3a84cd7e24572694113f33ad1b897f4fc56c4f21"
 
 const RandomFunctions = require("./generator")
 require("dotenv").config({ path: "./config.env" });
@@ -21,18 +21,18 @@ const axios = require('axios').default;
 const Security = require("./security")
 
 
-const url_login='http://localhost:5000/general_accounts/login'
-const url_logout='http://localhost:5000/general_accounts/logout'
-const url_create='http://localhost:5000/general_accounts/add'
-const url_request="http://localhost:5000/library_books"
-const url_delete="http://localhost:5000/general_accounts/delete"
+const url_login = 'http://localhost:5000/general_accounts/login'
+const url_logout = 'http://localhost:5000/general_accounts/logout'
+const url_create = 'http://localhost:5000/general_accounts/add'
+const url_request = "http://localhost:5000/library_books"
+const url_delete = "http://localhost:5000/general_accounts/delete"
 const data_delete = {
     username: username
 }
 const data_create = {
     username: username,
     password_plaintext: password_plaintext,
-    status:status
+    status: status
 };
 const data_login = {
     username: username,
@@ -45,38 +45,37 @@ const data_logout = {
 }
 const data_logout_all = {
     username: username,
-    device_id:null
+    device_id: null
 }
 const data_request = {
-    auth_token:auth_token
+    auth_token: auth_token
 }
 
 
 
-let url="", data="";
-let to_post=true;
-if(action === "create"){url=url_create;data=data_create;}
-else if(action === "login"){url=url_login;data=data_login;}
-else if(action === "logout"){url=url_logout;data=data_logout;}
-else if(action === "logout_all"){url=url_logout;data=data_logout_all;}
-else if(action === "request"){url=url_request;data=data_request;}
-else if(action === "delete"){url=url_delete;data=data_delete;}
-else if(action === "purge")
-{
-    to_post=false
-    dbo.connectToServer(function(err){
-        if(err)throw err;
+let url = "", data = "";
+let to_post = true;
+if (action === "create") { url = url_create; data = data_create; }
+else if (action === "login") { url = url_login; data = data_login; }
+else if (action === "logout") { url = url_logout; data = data_logout; }
+else if (action === "logout_all") { url = url_logout; data = data_logout_all; }
+else if (action === "request") { url = url_request; data = data_request; }
+else if (action === "delete") { url = url_delete; data = data_delete; }
+else if (action === "purge") {
+    to_post = false
+    dbo.connectToServer(function (err) {
+        if (err) throw err;
         Security.force_logout();
     })
 }
-if(!to_post)return;
+if (!to_post) return;
 
-axios.post(url,data).then((res) => {
-        console.log(`Status: ${res.status}`);
-        console.log('Body: ', res.data);
-    }).catch((err) => {
-        console.error(err);
-    });
+axios.post(url, data).then((res) => {
+    console.log(`Status: ${res.status}`);
+    console.log('Body: ', res.data);
+}).catch((err) => {
+    console.error(err);
+});
 
 
 
