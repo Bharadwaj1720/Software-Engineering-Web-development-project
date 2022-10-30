@@ -5,10 +5,10 @@
 README	
 
 This project contains the client-side and server-side code for an ERP system with four modules:
-library
-health
-general administration
-research
+1)library
+2)health
+3)general administration
+4)research
 The website has been built using the MERN stack
 Install reactjs.
 Install nodejs.
